@@ -39,6 +39,7 @@ variable "nic_id" {
 variable "admin_password" {
   description = "Admin password for the virtual machine"
   type        = string
+  default     = "Itv@12345678"
   sensitive   = true
 
 }
