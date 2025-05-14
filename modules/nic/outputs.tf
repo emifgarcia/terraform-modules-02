@@ -1,10 +1,20 @@
 output "id" {
   description = "The ID of the network interface"
-  value       = azurerm_network_interface.nic.id
+  value = {
+    for k, nic in azurerm_network_interface.nic :
+    k => {
+      id = nic.id
+    }
+  }
 
 }
 
 output "name" {
   description = "The name of the network interface"
-  value       = azurerm_network_interface.nic.name
+  value = {
+    for k, nic in azurerm_network_interface.nic :
+    k => {
+      name = nic.name
+    }
+  }
 }
